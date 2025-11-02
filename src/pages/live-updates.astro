@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Live Updates - GoalPredict Pro";
+const pageDescription = "Stay ahead of the game with real-time football match updates, live scores, and data-driven insights from GoalPredict Pro. Track ongoing games, player stats, and prediction adjustments as they happen.";
+
+const ongoingMatches = [
+  {
+    id: 1,
+    league: "Premier League",
+    homeTeam: "Manchester United",
+    awayTeam: "Liverpool",
+    kickoff: "3:00 PM GMT",
+    score: "1-0",
+    status: "In Progress",
+    keyEvent: "Goal by Rashford in the 22nd minute",
+    prediction: "65% win chance for United"
+  },
+  {
+    id: 2,
+    league: "La Liga",
+    homeTeam: "Real Madrid",
+    awayTeam: "Barcelona",
+    kickoff: "Kickoff: 20:00 CET",
+    score: "2-2",
+    status: "In Progress",
+    keyEvent: "High possession for Madrid (58%)",
+    prediction: "Expect a late surge based on historical data"
+  },
+  {
+    id: 3,
+    league: "Bundesliga",
+    homeTeam: "Bayern Munich",
+    awayTeam: "Dortmund",
+    kickoff: "Kickoff: 15:30 CET",
+    score: "0-0",
+    status: "Upcoming",
+    keyEvent: "Both teams show strong defensive form",
+    prediction: "Close game expected"
+  }
+];
+
+const recentEvents = [
+  {
+    id: 1,
+    time: "22'",
+    team: "Manchester United",
+    event: "Goal by Rashford",
+    probability: "+15%"
+  },
+  {
+    id: 2,
+    time: "18'",
+    team: "Barcelona",
+    event: "Yellow Card",
+    probability: "+5%"
+  },
+  {
+    id: 3,
+    time: "12'",
+    team: "Bayern Munich",
+    event: "Corner Kick",
+    probability: "+2%"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-[#0c1424] to-[#1a2a4a] py-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiMwYzE0MjQiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Live <span class="text-[#ff6f00]">Updates</span> 
+            <br />from the Field
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 max-w-lg">
+            Stay ahead of the game with real-time football match updates, live scores, and data-driven insights from GoalPredict Pro.
+          </p>
+          <div class="flex space-x-4">
+            <button class="bg-[#ff6f00] hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+              View All Matches
+            </button>
+            <button class="border-2 border-[#ff6f00] text-[#ff6f00] hover:bg-[#ff6f00] hover:text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+              Sign Up Free
+            </button>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center">
+          <div class="relative">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#ff6f00] to-[#ff9c40] opacity-20 blur-3xl absolute -top-10 -left-10"></div>
+            <div class="relative bg-[#0c1424] border border-gray-700 rounded-2xl p-6 shadow-2xl transform rotate-3">
+              <div class="text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#ff6f00] mb-4">
+                  <i class="fas fa-bolt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Real-Time Analytics</h3>
+                <p class="text-gray-400">Instant predictions and score updates</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gradient-to-b from-[#0c1424] to-[#1a2a4a]">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center p-6 bg-[#1a2a4a] rounded-xl border border-gray-700">
+          <div class="text-4xl font-bold text-[#ff6f00] mb-2">500+</div>
+          <div class="text-gray-400">Active Users</div>
+        </div>
+        <div class="text-center p-6 bg-[#1a2a4a] rounded-xl border border-gray-700">
+          <div class="text-4xl font-bold text-[#ff6f00] mb-2">98%</div>
+          <div class="text-gray-400">Prediction Accuracy</div>
+        </div>
+        <div class="text-center p-6 bg-[#1a2a4a] rounded-xl border border-gray-700">
+          <div class="text-4xl font-bold text-[#ff6f00] mb-2">24/7</div>
+          <div class="text-gray-400">Live Coverage</div>
+        </div>
+        <div class="text-center p-6 bg-[#1a2a4a] rounded-xl border border-gray-700">
+          <div class="text-4xl font-bold text-[#ff6f00] mb-2">150+</div>
+          <div class="text-gray-400">Leagues Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Matches Section -->
+  <section class="py-20 bg-[#0c1424]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ongoing Matches</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Stay tuned for real-time action from top leagues worldwide. Get instant notifications on match scores, key events, and prediction shifts.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {ongoingMatches.map((match) => (
+          <div key={match.id} class="bg-gradient-to-br from-[#1a2a4a] to-[#0c1424] rounded-2xl border border-gray-700 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="inline-block px-3 py-1 bg-[#ff6f00] text-white text-sm font-semibold rounded-full">
+                  {match.league}
+                </span>
+                <span class={`inline-block px-3 py-1 text-xs font-semibold rounded-full ${
+                  match.status === "In Progress" ? "bg-green-500 text-white" : "bg-blue-500 text-white"
+                }`}>
+                  {match.status}
+                </span>
+              </div>
+              
+              <div class="flex justify-between items-center mb-6">
+                <div class="text-center">
+                  <div class="text-xl font-bold text-white mb-1">{match.homeTeam}</div>
+                  <div class="text-gray-400 text-sm">Home</div>
+                </div>
+                
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-white mb-1">{match.score}</div>
+                  <div class="text-gray-400 text-sm">Current</div>
+                </div>
+                
+                <div class="text-center">
+                  <div class="text-xl font-bold text-white mb-1">{match.awayTeam}</div>
+                  <div class="text-gray-400 text-sm">Away</div>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <div class="flex items-center text-gray-400 text-sm mb-2">
+                  <i class="fas fa-clock mr-2"></i>
+                  {match.kickoff}
+                </div>
+              </div>
+              
+              <div class="border-t border-gray-700 pt-4">
+                <div class="flex items-start mb-3">
+                  <i class="fas fa-star text-yellow-400 mt-1 mr-3"></i>
+                  <div>
+                    <p class="text-white font-medium mb-1">{match.keyEvent}</p>
+                    <p class="text-gray-400 text-sm">{match.prediction}</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-6">
+                <button class="w-full py-3 bg-[#ff6f00] hover:bg-orange-600 text-white font-semibold rounded-lg transition duration-300">
+                  View Detailed Analysis
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Events Section -->
+  <section class="py-20 bg-gradient-to-b from-[#1a2a4a] to-[#0c1424]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Recent Match Events</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Track the most significant moments happening on the pitch in real-time.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-[#0c1424] rounded-2xl border border-gray-700 overflow-hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-700">
+            {recentEvents.map((event) => (
+              <div key={event.id} class="p-6 hover:bg-[#1a2a4a] transition duration-300">
+                <div class="flex items-center mb-4">
+                  <span class="inline-block w-10 h-10 rounded-full bg-[#ff6f00] text-white flex items-center justify-center font-bold mr-3">
+                    {event.time}
+                  </span>
+                  <div>
+                    <h3 class="font-bold text-white">{event.team}</h3>
+                    <p class="text-gray-400 text-sm">{event.event}</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="text-green-400 font-semibold">{event.probability}</span>
+                  <span class="ml-2 text-gray-400 text-sm">adjusted probability</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#0c1424] to-[#1a2a4a] border-t border-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Unlock Winning Bets with Data-Driven Football Predictions</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Join thousands of successful bettors who rely on our advanced analytics to make informed decisions.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <button class="bg-[#ff6f00] hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+            Start Free Trial
+          </button>
+          <button class="border-2 border-[#ff6f00] text-[#ff6f00] hover:bg-[#ff6f00] hover:text-white font-bold py-4 px-8 rounded-lg text-lg transition duration-300">
+            View Pricing Plans
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 111, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
+  }
+
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+</style>

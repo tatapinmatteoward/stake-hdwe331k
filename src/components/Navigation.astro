@@ -1,0 +1,60 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/strategy-hub', label: 'Strategy-Hub' },
+  { href: '/about', label: 'About' },
+  { href: '/guides', label: 'Guides' },
+  { href: '/analysis', label: 'Analysis' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/blog', label: 'Blog' }
+];
+---
+
+<nav class="bg-[#1a4c2e] shadow-lg">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-white">StakeWise Tactics</a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-white hover:text-[#e6b800] transition-colors duration-300"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-white">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col gap-4">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="text-white hover:text-[#e6b800] transition-colors duration-300 py-2"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<!-- Client-side JavaScript for mobile toggle -->
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

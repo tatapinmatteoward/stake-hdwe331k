@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Strategy Hub";
+const pageDescription = "Unlock expert football betting strategies at StakeWise Tactics. Discover data-driven insights, tactical analyses, and proven tips to elevate your betting game with confidence.";
+
+const strategies = [
+  {
+    title: "Value Betting Fundamentals",
+    description: "Identify discrepancies between bookmakers' odds and your predicted probabilities. Focus on expected value (EV) to ensure long-term profitability.",
+    icon: "fa-coins"
+  },
+  {
+    title: "Match Analysis Framework",
+    description: "Systematic approach to evaluating team form, head-to-head records, and key player injuries to predict match outcomes accurately.",
+    icon: "fa-chart-line"
+  },
+  {
+    title: "Bankroll Management",
+    description: "Strategic allocation of funds to minimize risk while maximizing growth potential across multiple betting sessions.",
+    icon: "fa-wallet"
+  },
+  {
+    title: "Live Betting Opportunities",
+    description: "Real-time strategies to capitalize on changing odds and match dynamics during gameplay for enhanced profit potential.",
+    icon: "fa-bolt"
+  },
+  {
+    title: "Statistical Modeling Techniques",
+    description: "Advanced analytics and predictive models based on historical data to forecast team performance and betting outcomes.",
+    icon: "fa-brain"
+  },
+  {
+    title: "Market Timing Strategies",
+    description: "Optimizing betting timing around key events, news cycles, and market movements for maximum advantage.",
+    icon: "fa-clock"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "These strategies transformed my betting approach completely. I've seen consistent profits since implementing their framework.",
+    author: "Michael Rodriguez",
+    role: "Professional Bettor"
+  },
+  {
+    quote: "The analytical depth of these methods is unmatched. Every tip has helped me make better decisions on the field.",
+    author: "Sarah Johnson",
+    role: "Seasoned Analyst"
+  },
+  {
+    quote: "As someone new to sports betting, these insights gave me the confidence to start betting strategically rather than randomly.",
+    author: "David Chen",
+    role: "Beginner Gambler"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-primary to-[#0d2f1c] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#e6b800_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium mb-4">
+          <i class="fas fa-star mr-2"></i> Strategic Insights for Smarter Football Betting
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Strategy <span class="text-accent">Hub</span>
+        </h1>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Unlock expert football betting strategies that transform casual bets into calculated wins with data-driven insights.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-accent hover:bg-yellow-600 text-primary font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Explore Strategies
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-white/30 hover:border-white text-white font-semibold rounded-lg transition-all duration-300">
+            View Analytics
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Strategies Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Core Betting Strategies</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Discover our carefully curated methodologies that have been refined through years of data analysis and real-world application.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {strategies.map((strategy, index) => (
+          <div 
+            key={index} 
+            class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+          >
+            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+              <i class={`fas ${strategy.icon} text-2xl text-primary`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">{strategy.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{strategy.description}</p>
+            <div class="mt-4 flex items-center text-accent font-medium">
+              <span>Learn more</span>
+              <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Success Stories</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Hear from our community of bettors who have transformed their gaming experience with our strategic approaches.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                <i class="fas fa-quote-left text-primary text-xl"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">{testimonial.author}</h4>
+                <p class="text-sm text-gray-600">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">"{testimonial.quote}"</p>
+            <div class="flex mt-4">
+              {[...Array(5)].map((_, i) => (
+                <i key={i} class="fas fa-star text-yellow-400"></i>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-[#0d2f1c]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Elevate Your Game?</h2>
+        <p class="text-gray-200 text-xl mb-10 max-w-2xl mx-auto">
+          Join thousands of successful bettors who trust our proven strategies for smarter football betting decisions.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-accent hover:bg-yellow-600 text-primary font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Start Your Strategy Journey
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-white/30 hover:border-white text-white font-bold rounded-lg transition-all duration-300">
+            Access Free Resources
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-6">
+          <div class="text-4xl font-bold text-primary mb-2">94%</div>
+          <div class="text-gray-600">Win Rate Improvement</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold text-primary mb-2">8.2x</div>
+          <div class="text-gray-600">ROI Increase</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold text-primary mb-2">12K+</div>
+          <div class="text-gray-600">Active Members</div>
+        </div>
+        <div class="p-6">
+          <div class="text-4xl font-bold text-primary mb-2">18+</div>
+          <div class="text-gray-600">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .hero-pattern {
+    background-image: radial-gradient(circle at 20% 80%, rgba(230, 184, 0, 0.1) 0%, transparent 20%),
+                      radial-gradient(circle at 80% 20%, rgba(230, 184, 0, 0.1) 0%, transparent 20%);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+</style>

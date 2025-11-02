@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Expert Football Predictions - GoalPredict Pro";
+const pageDescription = "Discover accurate, data-driven football predictions to boost your betting success. Explore our latest match insights, stats, and winning strategies on GoalPredict Pro.";
+
+const features = [
+  {
+    icon: "fas fa-chart-line",
+    title: "Accuracy First",
+    description: "Our models analyze thousands of data points, including team form, player stats, head-to-head records, and external factors like weather and injuries."
+  },
+  {
+    icon: "fas fa-sync-alt",
+    title: "Real-Time Updates",
+    description: "Predictions are refreshed daily to reflect the latest news and lineup changes."
+  },
+  {
+    icon: "fas fa-trophy",
+    title: "Proven Track Record",
+    description: "Over 75% win rate on major football leagues with our predictive models."
+  }
+];
+
+const upcomingMatches = [
+  {
+    league: "Premier League",
+    homeTeam: "Manchester City",
+    awayTeam: "Liverpool",
+    time: "20:00 GMT",
+    prediction: "Over 2.5 Goals",
+    confidence: "92%"
+  },
+  {
+    league: "La Liga",
+    homeTeam: "Barcelona",
+    awayTeam: "Real Madrid",
+    time: "18:00 GMT",
+    prediction: "Draw No Bet",
+    confidence: "87%"
+  },
+  {
+    league: "Bundesliga",
+    homeTeam: "Bayern Munich",
+    awayTeam: "Borussia Dortmund",
+    time: "17:30 GMT",
+    prediction: "Home Win",
+    confidence: "95%"
+  }
+];
+
+const statistics = [
+  { value: "75%", label: "Win Rate" },
+  { value: "10K+", label: "Predictions" },
+  { value: "24/7", label: "Analysis" },
+  { value: "98%", label: "Accuracy" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  {/* Hero Section */}
+  <section class="relative bg-gradient-to-br from-primary to-[#1a2a4a] py-20 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0ibm9uZSIvPgo8Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjEiLz4KPC9zdmc+')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 mb-4 bg-accent/20 text-accent rounded-full text-sm font-semibold">
+          <i class="fas fa-star mr-2"></i> Premium Analysis
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Unlock Winning Bets with <span class="text-accent">Data-Driven</span> Football Predictions
+        </h1>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Access precision forecasts powered by advanced algorithms, real-time data, and expert analysis to maximize your betting potential.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-accent hover:bg-orange-600 text-primary font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-orange-500/20">
+            Get Today's Picks
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300">
+            View Statistics
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Features Section */}
+  <section class="py-20 bg-gradient-to-b from-[#0a1020] to-primary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose GoalPredict Pro?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Our cutting-edge approach combines human expertise with artificial intelligence to deliver unmatched accuracy.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#101a2d] to-[#0c1424] p-8 rounded-xl border border-white/10 hover:border-accent/50 transition-all duration-300 group">
+            <div class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+              <i class={`fas ${feature.icon} text-2xl text-accent`}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+            <p class="text-gray-400">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Stats Section */}
+  <section class="py-20 bg-gradient-to-r from-primary to-[#1a2a4a]">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {statistics.map((stat, index) => (
+          <div key={index} class="text-center">
+            <div class="text-5xl md:text-6xl font-bold text-white mb-2">{stat.value}</div>
+            <div class="text-gray-400 uppercase tracking-wider text-sm">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Match Predictions */}
+  <section class="py-20 bg-[#0a1020]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Today's Expert Predictions</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Curated by our team of analysts, these predictions are backed by comprehensive data analysis.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {upcomingMatches.map((match, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#101a2d] to-[#0c1424] rounded-xl border border-white/10 overflow-hidden hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="inline-block px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
+                    {match.league}
+                  </span>
+                  <div class="text-gray-400 text-sm mt-1">{match.time}</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-white font-bold text-lg">{match.confidence}</div>
+                  <div class="text-xs text-gray-500">Confidence</div>
+                </div>
+              </div>
+              
+              <div class="flex justify-between items-center mb-6">
+                <div class="text-center">
+                  <div class="font-bold text-white">{match.homeTeam}</div>
+                  <div class="text-gray-500 text-sm">Home</div>
+                </div>
+                
+                <div class="text-gray-500 font-bold">VS</div>
+                
+                <div class="text-center">
+                  <div class="font-bold text-white">{match.awayTeam}</div>
+                  <div class="text-gray-500 text-sm">Away</div>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-r from-accent/10 to-orange-500/10 rounded-lg p-4 border border-accent/30">
+                <div class="flex justify-between items-center">
+                  <span class="text-white font-bold">
+                    <i class="fas fa-bolt mr-2"></i> {match.prediction}
+                  </span>
+                  <span class="text-accent font-bold">
+                    <i class="fas fa-lightbulb"></i> Analyst Pick
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="px-8 py-3 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-primary font-bold rounded-lg transition-all duration-300">
+          View All Predictions
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="py-20 bg-gradient-to-br from-primary to-[#1a2a4a]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center bg-gradient-to-br from-[#101a2d] to-[#0c1424] rounded-2xl p-12 border border-white/10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Boost Your Betting Success?</h2>
+        <p class="text-gray-300 mb-10 text-lg">
+          Join thousands of punters who trust GoalPredict Pro for their tactical edge in football betting.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-accent hover:bg-orange-600 text-primary font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+            Start Free Trial
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

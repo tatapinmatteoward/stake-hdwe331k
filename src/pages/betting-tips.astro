@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Betting Tips - GoalPredict Pro";
+const pageDescription = "Discover expert betting tips powered by advanced analytics to enhance your football betting strategy and boost your success rate on GoalPredict Pro.";
+
+const tips = [
+  {
+    id: 1,
+    sport: "Football",
+    category: "Premier League",
+    title: "Manchester City vs Arsenal",
+    prediction: "Over 2.5 Goals",
+    confidence: 87,
+    value: "High"
+  },
+  {
+    id: 2,
+    sport: "Football",
+    category: "Champions League",
+    title: "Barcelona vs Bayern Munich",
+    prediction: "Both Teams To Score",
+    confidence: 92,
+    value: "Very High"
+  },
+  {
+    id: 3,
+    sport: "Football",
+    category: "La Liga",
+    title: "Real Madrid vs Atletico Madrid",
+    prediction: "Draw No Bet",
+    confidence: 78,
+    value: "Medium"
+  },
+  {
+    id: 4,
+    sport: "Football",
+    category: "Bundesliga",
+    title: "Bayern Munich vs Borussia Dortmund",
+    prediction: "Full Time Result",
+    confidence: 85,
+    value: "High"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-chart-line",
+    title: "Precision Analytics",
+    description: "Every tip backed by real-time data, team form, player stats, and historical trends."
+  },
+  {
+    icon: "fas fa-brain",
+    title: "Proven Strategies",
+    description: "Learn from algorithms that have analyzed thousands of matches for higher accuracy."
+  },
+  {
+    icon: "fas fa-user-friends",
+    title: "Tailored Advice",
+    description: "Whether Premier League or Champions League, our tips adapt to your preferences."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  {/* Hero Section */}
+  <div class="relative bg-gradient-to-r from-[#0c1424] via-[#1a2a4a] to-[#0c1424] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMiIgcj0iMSIgZmlsbD0iI2ZmNmYwMCIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+    </div>
+    
+    <div class="relative container mx-auto px-4 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1 mb-4 bg-[#ff6f00]/20 text-[#ff6f00] rounded-full text-sm font-semibold">
+          <i class="fas fa-bolt mr-2"></i> LIVE ANALYTICS
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Unlock Smarter Bets with<br />
+          <span class="text-[#ff6f00]">Expert Football Betting Tips</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl">
+          Welcome to the Betting Tips section of GoalPredict Pro, where data-driven insights meet strategic advice to help you navigate the exciting world of football betting.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="px-8 py-4 bg-[#ff6f00] hover:bg-[#ff8c33] text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ff6f00]/30">
+            Get Free Tips
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-[#ff6f00] text-[#ff6f00] hover:bg-[#ff6f00]/10 font-bold rounded-lg transition-all duration-300">
+            View Premium Packages
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Features Section */}
+  <section class="py-16 bg-gradient-to-b from-[#0c1424] to-[#1a2a4a]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose Our Betting Tips?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Powered by dynamic sports analytics, we provide actionable tips that go beyond guesswork.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#1a2a4a]/50 to-[#0c1424]/50 backdrop-blur-sm p-8 rounded-2xl border border-[#ff6f00]/20 hover:border-[#ff6f00]/50 transition-all duration-300 group">
+            <div class="w-16 h-16 rounded-full bg-[#ff6f00]/10 flex items-center justify-center text-[#ff6f00] text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-400">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Featured Tips Section */}
+  <section class="py-20 bg-gradient-to-b from-[#1a2a4a] to-[#0c1424]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-1 mb-4 bg-[#ff6f00]/20 text-[#ff6f00] rounded-full text-sm font-semibold">
+          <i class="fas fa-trophy mr-2"></i> TRENDING TIPS
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Premium Betting Insights</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Access our latest expert predictions with confidence ratings and value indicators
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {tips.map((tip) => (
+          <div key={tip.id} class="bg-gradient-to-br from-[#0c1424] to-[#1a2a4a] rounded-2xl overflow-hidden border border-[#ff6f00]/20 hover:border-[#ff6f00]/50 transition-all duration-300 group">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <span class="inline-block px-3 py-1 bg-[#ff6f00]/20 text-[#ff6f00] rounded-full text-xs font-semibold mb-2">
+                    {tip.sport}
+                  </span>
+                  <h3 class="text-xl font-bold text-white mb-1">{tip.title}</h3>
+                  <p class="text-gray-400 text-sm">{tip.category}</p>
+                </div>
+                <div class="flex items-center bg-[#ff6f00]/10 px-3 py-1 rounded-full">
+                  <i class="fas fa-star text-[#ff6f00] mr-1"></i>
+                  <span class="text-[#ff6f00] font-bold">{tip.confidence}%</span>
+                </div>
+              </div>
+              
+              <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-gray-400">Prediction:</span>
+                  <span class="font-bold text-white">{tip.prediction}</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-400">Value:</span>
+                  <span class={`font-bold ${tip.value === 'High' || tip.value === 'Very High' ? 'text-green-400' : 'text-yellow-400'}`}>
+                    {tip.value}
+                  </span>
+                </div>
+              </div>
+              
+              <div class="flex justify-between items-center">
+                <button class="px-6 py-2 bg-[#ff6f00] hover:bg-[#ff8c33] text-white rounded-lg text-sm font-medium transition-colors duration-300">
+                  Get Details
+                </button>
+                <div class="flex space-x-2">
+                  <button class="w-10 h-10 rounded-full bg-[#1a2a4a] hover:bg-[#ff6f00]/20 flex items-center justify-center text-gray-400 hover:text-[#ff6f00] transition-colors duration-300">
+                    <i class="fas fa-heart"></i>
+                  </button>
+                  <button class="w-10 h-10 rounded-full bg-[#1a2a4a] hover:bg-[#ff6f00]/20 flex items-center justify-center text-gray-400 hover:text-[#ff6f00] transition-colors duration-300">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="px-6 py-4 bg-gradient-to-r from-[#ff6f00]/10 to-transparent border-t border-[#ff6f00]/10">
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-gray-500">Updated just now</span>
+                <div class="flex items-center space-x-1">
+                  <i class="fas fa-clock text-gray-500 text-xs"></i>
+                  <span class="text-xs text-gray-500">2 min ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="px-8 py-3 border-2 border-[#ff6f00] text-[#ff6f00] hover:bg-[#ff6f00] hover:text-white rounded-lg font-medium transition-all duration-300">
+          View All Tips <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* CTA Section */}
+  <section class="py-20 bg-gradient-to-r from-[#0c1424] to-[#1a2a4a]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Ready to Boost Your Betting Success?
+        </h2>
+        <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+          Join thousands of successful bettors who rely on our data-driven insights to make smarter decisions.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-[#ff6f00] hover:bg-[#ff8c33] text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#ff6f00]/30">
+            Start Free Trial
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-[#ff6f00] text-[#ff6f00] hover:bg-[#ff6f00]/10 font-bold rounded-lg transition-all duration-300">
+            View Pricing Plans
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .gradient-border {
+    position: relative;
+    border-radius: 12px;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6f00, #0c1424, #ff6f00);
+    z-index: -1;
+    border-radius: 14px;
+    animation: gradientShift 3s ease infinite;
+    background-size: 300% 300%;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>

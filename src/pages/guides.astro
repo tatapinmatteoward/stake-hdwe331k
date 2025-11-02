@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Guides";
+const pageDescription = "Explore comprehensive guides on football betting strategies, from beginner tips to advanced tactics, designed to sharpen your edge in sports wagering.";
+
+const guides = [
+  {
+    id: 1,
+    title: "Beginner's Roadmap to Football Betting",
+    excerpt: "Learn the fundamentals of football betting with our step-by-step introduction to the sport.",
+    category: "Beginner",
+    readTime: "8 min read",
+    icon: "fas fa-user-friends"
+  },
+  {
+    id: 2,
+    title: "Advanced Value Betting Techniques",
+    excerpt: "Master the art of identifying value bets through statistical analysis and market inefficiencies.",
+    category: "Advanced",
+    readTime: "12 min read",
+    icon: "fas fa-chart-line"
+  },
+  {
+    id: 3,
+    title: "Match Analysis & Formation Mastery",
+    excerpt: "How to read tactical formations and predict match outcomes with deep analytical insight.",
+    category: "Analysis",
+    readTime: "10 min read",
+    icon: "fas fa-tachometer-alt"
+  },
+  {
+    id: 4,
+    title: "Bankroll Management Strategies",
+    excerpt: "Protect your profits and minimize losses with proven bankroll management techniques.",
+    category: "Strategy",
+    readTime: "7 min read",
+    icon: "fas fa-wallet"
+  },
+  {
+    id: 5,
+    title: "Live Betting & In-Play Strategies",
+    excerpt: "Capitalize on real-time opportunities with our comprehensive live betting guide.",
+    category: "Advanced",
+    readTime: "9 min read",
+    icon: "fas fa-bolt"
+  },
+  {
+    id: 6,
+    title: "Hedging & Arbitrage Tactics",
+    excerpt: "Learn how to eliminate risk while maximizing potential returns through hedging techniques.",
+    category: "Professional",
+    readTime: "15 min read",
+    icon: "fas fa-shield-alt"
+  }
+];
+
+const features = [
+  {
+    title: "Tactical Depth",
+    description: "Dive into formations, player stats, and match dynamics that influence outcomes.",
+    icon: "fas fa-chess-board"
+  },
+  {
+    title: "Data-Driven Advice",
+    description: "Backed by analytics and historical trends for reliable strategies.",
+    icon: "fas fa-database"
+  },
+  {
+    title: "Practical Tips",
+    description: "Actionable steps to apply in your betting routine, minimizing risks and maximizing returns.",
+    icon: "fas fa-lightbulb"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-primary to-[#0d2a1a] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-64 h-64 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+      <div class="absolute top-40 right-10 w-72 h-72 bg-[#e6b800]/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+      <div class="absolute bottom-10 left-1/2 w-60 h-60 bg-[#1a4c2e]/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          <span class="block">Strategic Insights</span>
+          <span class="block mt-2 text-accent">for Smarter Football Betting</span>
+        </h1>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Explore comprehensive guides on football betting strategies, from beginner tips to advanced tactics, designed to sharpen your edge in sports wagering.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Browse All Guides
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300">
+            <i class="fas fa-play-circle mr-2"></i> Watch Intro Video
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose Our Guides?</h2>
+        <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Gain competitive advantages with expert strategies crafted for the modern bettor
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-3xl text-primary`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">{feature.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Grid Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Comprehensive Betting Guides</h2>
+        <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          From foundational concepts to elite-level strategies, we build your expertise progressively
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {guides.map((guide) => (
+          <article key={guide.id} class="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+            <div class="h-48 bg-gradient-to-r from-primary to-[#0d2a1a] flex items-center justify-center">
+              <div class="text-5xl text-accent">
+                <i class={guide.icon}></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <span class="inline-block px-3 py-1 bg-[#1a4c2e]/10 text-primary text-sm font-semibold rounded-full">
+                  {guide.category}
+                </span>
+                <span class="text-gray-500 text-sm">{guide.readTime}</span>
+              </div>
+              <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">
+                {guide.title}
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">{guide.excerpt}</p>
+              <button class="flex items-center text-accent font-medium group-hover:text-primary transition-colors duration-300">
+                Read Guide
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-[#0d2a1a]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Elevate Your Betting Game?</h2>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Join thousands of strategic bettors who have transformed their approach with our expert guides
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Start Learning Today
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-accent text-white font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300">
+            Download Preview Guide
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 15s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .animate-blob {
+      display: none;
+    }
+  }
+</style>
